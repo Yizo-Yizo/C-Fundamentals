@@ -1066,37 +1066,62 @@ namespace IntroToCSharp
 
             // Chapter 9
 
-            static void ModifyArray(int[] arrParam)
-            {
-                arrParam[0] = 5;
-                Console.Write("In ModifyArray() the param is: ");
-                PrintArray(arrParam);
-            }
-            static void PrintArray(int[] arrParam)
-            {
-                Console.Write("[");
-                int length = arrParam.Length;
-                if (length > 0)
-                {
-                    Console.Write(arrParam[0].ToString());
-                    for (int i = 1; i < length; i++)
-                    {
-                        Console.Write(", {0}", arrParam[i]);
-                    }
-                }
-                Console.WriteLine("]");
-            }
+            /* static void ModifyArray(int[] arrParam)
+             {
+                 arrParam[0] = 5;
+                 Console.Write("In ModifyArray() the param is: ");
+                 PrintArray(arrParam);
+             }
+             static void PrintArray(int[] arrParam)
+             {
+                 Console.Write("[");
+                 int length = arrParam.Length;
+                 if (length > 0)
+                 {
+                     Console.Write(arrParam[0].ToString());
+                     for (int i = 1; i < length; i++)
+                     {
+                         Console.Write(", {0}", arrParam[i]);
+                     }
+                 }
+                 Console.WriteLine("]");
+             }
 
-            int[] arrArg = new int[] { 1, 2, 3 };
-            Console.Write("Before ModifyArray() the argument is: ");
-            PrintArray(arrArg);
-            // Modifying the array's argument
-            ModifyArray(arrArg);
-            Console.Write("After ModifyArray() the argument is: ");
-            PrintArray(arrArg);
+             int[] arrArg = new int[] { 1, 2, 3 };
+             Console.Write("Before ModifyArray() the argument is: ");
+             PrintArray(arrArg);
+             // Modifying the array's argument
+             ModifyArray(arrArg);
+             Console.Write("After ModifyArray() the argument is: ");
+             PrintArray(arrArg);*/
+
+            // Entering the value of the variable n
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+            // Printing the upper part of the triangle
+            for (int line = 1; line <= n; line++)
+            {
+                PrintLine(1, line);
+            }
+            // Printing the bottom part of the triangle
+            // that is under the longest line
+            for (int line = n - 1; line >= 1; line--)
+            {
+                PrintLine(1, line);
+            }
         }
-    }
+        static void PrintLine(int start, int end)
+        {
+            for (int i = start; i <= end; i++)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+        }
+    }   
 }
+
 
 
 
