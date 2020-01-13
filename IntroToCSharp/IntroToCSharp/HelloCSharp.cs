@@ -1038,7 +1038,38 @@ namespace IntroToCSharp
             for(int i = 0; i < array.Length; i++)
             {
                 if(array[i])
+            }
+
+            int count = 1, tempCount = 1, number = 0;
+            Console.Write("Enter: ");
+            int length = int.Parse(Console.ReadLine());
+            int[] array = new int[length];
+               
+            for(int i = 0; i < array.Length - 1; i++)
+            {
+                Console.Write("Enter {0} element: ", i);
+                array[i] = int.Parse(Console.ReadLine());
+            }
+
+            for(int i = 0; i < array.Length - 1; i++)
+            {
+                if (array[i] == array[i + 1])
+                    tempCount++;
+                else
+                {
+                    tempCount = 1;
+                }
+                if(tempCount > count)
+                {
+                    count = tempCount;
+                    number = array[i];
+                }
+            }
+            for(int i = 0; i < count; i++)
+            {
+                Console.Write("{0}, ", number);
             }*/
+
 
             //Chapter 8
 
@@ -1093,7 +1124,7 @@ namespace IntroToCSharp
              // Modifying the array's argument
              ModifyArray(arrArg);
              Console.Write("After ModifyArray() the argument is: ");
-             PrintArray(arrArg);*/
+             PrintArray(arrArg);
 
             // Entering the value of the variable n
             Console.Write("n = ");
@@ -1118,9 +1149,48 @@ namespace IntroToCSharp
                 Console.Write(i + " ");
             }
             Console.WriteLine();
+        }*/
+
+            //Chapter 09
+            Console.Write("Enter your name: ");
+            string name = (Console.ReadLine());
+
+            Console.WriteLine($"\"Hello, {name}\"!");
+
+            
+            Console.Write("Enter the first digit: ");
+            int firstNumber = int.Parse(Console.ReadLine());
+            Console.Write("Enter the second digit: ");
+            int secondNumber = int.Parse(Console.ReadLine());
+            Console.Write("Enter the third digit: ");
+            int thirdNumber = int.Parse(Console.ReadLine());
+
+            GetMax(firstNumber, secondNumber, thirdNumber);
         }
-    }   
-}
+
+        static void GetMax(int firstNumber, int secondNumber, int thirdNumber)
+        {
+            if (firstNumber > secondNumber && firstNumber > thirdNumber)
+            {
+
+                // return firstNumber;
+                Console.WriteLine($"The biggest number is: {firstNumber}");
+
+            }
+
+            else if (secondNumber > firstNumber && secondNumber > thirdNumber)
+            {
+                Console.WriteLine($"The biggest number is: {secondNumber}");
+
+            }
+            else
+            {
+                Console.WriteLine($"The biggest number is: {thirdNumber}");
+            }
+        }
+    }
+ }   
+
 
 
 
