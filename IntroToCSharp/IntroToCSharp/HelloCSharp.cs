@@ -1194,7 +1194,7 @@ namespace IntroToCSharp
             //10
             Console.Write("Enter number: ");
             int factorailNumber = int.Parse(Console.ReadLine());
-            Console.WriteLine(Factorial(factorailNumber));*/
+            Console.WriteLine(Factorial(factorailNumber));
 
             //01Chapter10
             {
@@ -1202,83 +1202,119 @@ namespace IntroToCSharp
                 int n = Int32.Parse(Console.ReadLine());
                 int[] arr = new int[n];
                 Loops(arr, 0);
-            }
+            }*/
+
+            Console.WriteLine(Math.PI);
+            Console.WriteLine(Math.E);
 
 
             //2Method
-            static void GetMax(int firstNumber, int secondNumber, int thirdNumber)
+            /*  static void GetMax(int firstNumber, int secondNumber, int thirdNumber)
+              {
+                  if (firstNumber > secondNumber && firstNumber > thirdNumber)
+                  {
+
+                      // return firstNumber;
+                      Console.WriteLine($"The biggest number is: {firstNumber}");
+
+                  }
+
+                  else if (secondNumber > firstNumber && secondNumber > thirdNumber)
+                  {
+                      Console.WriteLine($"The biggest number is: {secondNumber}");
+
+                  }
+                  else
+                  {
+                      Console.WriteLine($"The biggest number is: {thirdNumber}");
+                  }
+              }
+
+              //4Method
+
+              static int NumberCount(int[] numberList, int num2)
+              {
+                  int numberCount = 0;
+                  foreach (int digit in numberList)
+                  {
+                      if (num2 == digit)
+                          numberCount++;
+                  }
+                  return numberCount;
+              }
+
+              //5Method
+              static void GreaterThanLeftDigit(int[] array, int number1)
+              {
+                  for(int i = 0; i < array.Length + 1; i++)
+                  {
+                      if (number1 > array[i - 1])
+                          Console.WriteLine($"{array[i]} is greater than its neighbours!");
+                      else
+                      {
+                          Console.WriteLine($"{array[i]} is not greater than its neigbours");
+                      }
+                  }   
+              }
+
+              //10Method
+              static  int Factorial(int number)
+              {
+                  int num1 = 1;
+                  for(int num = 1; num < number; num++)
+                  {
+                      number = num1 * num;
+                  }
+                  return number;
+              }
+
+              //01MethodChapter10
+              static void Loops(int[] arr, int index)
+              {
+                  if (index >= arr.Length)
+                  {
+                      foreach (int element in arr) Console.Write("{0} ", element);
+                      Console.WriteLine();
+                  }
+                  else
+                      for (int i = 1; i <= arr.Length; i++)
+                      {
+                          arr[index] = i;
+                          Loops(arr, index + 1);
+                      }
+              }
+
+            //Chapter11
+            Random rnd = new Random();
+            int randomNumbers = rnd.Next(100, 200);
+            string tenNumbers = randomNumbers.ToString();
+            for (int digit = 0; digit < tenNumbers.Length; digit++)
             {
-                if (firstNumber > secondNumber && firstNumber > thirdNumber)
+                if(tenNumbers.Length < 11)
                 {
-
-                    // return firstNumber;
-                    Console.WriteLine($"The biggest number is: {firstNumber}");
-
+                    Console.WriteLine(tenNumbers);
                 }
+            }*/
+            //5
+            Console.Write("Enter the first side: ");
+            double firstSide = double.Parse(Console.ReadLine());
+            Console.Write("Enter the second side: ");
+            double secondSide = double.Parse(Console.ReadLine());
 
-                else if (secondNumber > firstNumber && secondNumber > thirdNumber)
-                {
-                    Console.WriteLine($"The biggest number is: {secondNumber}");
+            double hypot = Math.Pow(firstSide, 2) + Math.Pow(secondSide, 2);
+            Console.WriteLine(hypot);
 
-                }
-                else
-                {
-                    Console.WriteLine($"The biggest number is: {thirdNumber}");
-                }
-            }
-
-            //4Method
-             
-            static int NumberCount(int[] numberList, int num2)
+            //7
             {
-                int numberCount = 0;
-                foreach (int digit in numberList)
-                {
-                    if (num2 == digit)
-                        numberCount++;
-                }
-                return numberCount;
-            }
-
-            //5Method
-            static void GreaterThanLeftDigit(int[] array, int number1)
-            {
-                for(int i = 0; i < array.Length + 1; i++)
-                {
-                    if (number1 > array[i - 1])
-                        Console.WriteLine($"{array[i]} is greater than its neighbours!");
-                    else
+                
+                    String name = "Cat";
+                    for (int i = 0; i < 10; i++)
                     {
-                        Console.WriteLine($"{array[i]} is not greater than its neigbours");
+                        Cat cat = new Cat(name + Sequence.NextValue(), "Black");
+                        cat.sayMiau();
                     }
-                }   
-            }
-            
-            //10Method
-            static  int Factorial(int number)
-            {
-                int num1 = 1;
-                for(int num = 1; num < number; num++)
-                {
-                    number = num1 * num;
-                }
-                return number;
-            }
-
-            //01MethodChapter10
-            static void Loops(int[] arr, int index)
-            {
-                if (index >= arr.Length)
-                {
-                    foreach (int element in arr) Console.Write("{0} ", element);
-                    Console.WriteLine();
-                }
-                else
-                    for (int i = 1; i <= arr.Length; i++)
-                    {
-                        arr[index] = i;
-                        Loops(arr, index + 1);
-                    }
+                    Console.ReadLine();
+                
             }
         }
     }
