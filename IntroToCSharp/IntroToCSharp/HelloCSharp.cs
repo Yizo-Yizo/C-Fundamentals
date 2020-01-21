@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Numerics;
 
 namespace IntroToCSharp
@@ -1294,7 +1295,7 @@ namespace IntroToCSharp
                 {
                     Console.WriteLine(tenNumbers);
                 }
-            }*/
+            }
             //5
             Console.Write("Enter the first side: ");
             double firstSide = double.Parse(Console.ReadLine());
@@ -1315,6 +1316,31 @@ namespace IntroToCSharp
                     }
                     Console.ReadLine();
                 
+            }*/
+            //Chapter12
+            
+            
+        }
+
+        static string ReadFile(string fileName)
+        {
+            TextReader reader = new StreamReader(fileName);
+
+            try
+            {
+                string line = reader.ReadLine();
+                return line;
+            }
+            catch(FileNotFoundException fnfe)
+            {
+                Console.WriteLine($"The file {fileName} does not exist!");
+            }
+            finally
+            {
+                if(reader != null)
+                {
+                    reader.Close();
+                }
             }
         }
     }
