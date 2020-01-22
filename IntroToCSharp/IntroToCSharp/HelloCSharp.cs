@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace IntroToCSharp
 
@@ -1316,13 +1317,27 @@ namespace IntroToCSharp
                     }
                     Console.ReadLine();
                 
-            }*/
-            //Chapter12
-            
-            
+            }
+            //Chapter13
+            //2
+            Console.Write("Enter a string: ");
+            string str = Console.ReadLine();
+            ReverseString(str);
+
+            //5
+            string story = "We are living in a yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.";
+            LookForIn(story.ToLower());*/
+
+            //11
+            string extract = "GeeksforGeeks is a computer science " +
+                     "portal for geeks. I am pursuing my " +
+                     "major in computer science. ";
+            String cen = "computer";
+            Console.WriteLine(censor(extract, cen));
+
         }
 
-        static string ReadFile(string fileName)
+       /* static string ReadFile(string fileName)
         {
             TextReader reader = new StreamReader(fileName);
 
@@ -1341,10 +1356,60 @@ namespace IntroToCSharp
                 {
                     reader.Close();
                 }
+            }*/
+
+            //Chapter13
+            //2
+            static void ReverseString(string str)
+             {
+                    for (int i = str.Length - 1; i >= 0; i--)
+                    {
+                          var reversedStr = str[i];
+
+                          Console.Write(reversedStr);
+                    }
             }
+           //5 
+            static void LookForIn(string story)
+        {
+            int count = 0;
+            var firstLetter = 'i';
+            char secondLetter = 'n';
+            for(int index = 0; index <= story.Length - 1; index++)
+            {
+                if (story[index] == firstLetter && story[index + 1] == secondLetter)
+                    count++;
+
+            }
+            int sum = 0 + count;
+            Console.WriteLine(sum);
         }
-    }
+
+            //11
+            static string censor(string text, string word)
+        {
+            string[] wordList = text.Split(' ');
+            string result = "";
+            string stars = "";
+            for (int i = 0; i < word.Length; i++)
+                stars += '*';
+
+            int index = 0;
+            foreach(string i in wordList)
+            {
+                if (i.CompareTo(word) == 0)
+                    wordList[index] = stars;
+                index++;
+            }
+
+            foreach (string i in wordList)
+                result += i + " ";
+
+            return result;
+        }
+     }
 }
+
 
        
     
