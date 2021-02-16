@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ACM.BL\ACM.BL.csproj" />
+    <ProjectReference Include="..\Acme.Common\Acme.Common.csproj" />
+    <ProjectReference Include="..\Tests\ACM.BLTest\ACM.BLTest.csproj" />
+    <ProjectReference Include="..\Tests\Acme.CommonTest\Acme.CommonTest.csproj" />
+  </ItemGroup>
+
+</Project>
